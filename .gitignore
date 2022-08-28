@@ -3,3 +3,5 @@
 *.dbn
 code.cpp
 *.swp
+code
+debug
