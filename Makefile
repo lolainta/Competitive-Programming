@@ -25,6 +25,7 @@ dbn: debug
 	./code < $< > $@ 
 %.dbn: %.in debug
 	./debug < $< 2> $@ > /dev/null
+	cat $<
 	cat $@
 show: $(OUTS)
 	@for f in $(OUTS); do\
