@@ -182,4 +182,15 @@ std::ostream&operator<<(std::ostream&os,std::vector<T>&_){
     os<<"]";
     return os;
 }
+
+template<typename T>
+std::ostream&operator<<(std::ostream&os,std::set<T>&_){
+    int f=0;
+    os<<"{";
+    for(auto&__:_)
+        os<<(f++?",":"")<<__;
+    os<<"}";
+    return os;
+}
+
 #endif
