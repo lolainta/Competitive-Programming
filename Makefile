@@ -3,7 +3,7 @@
 
 CC=g++
 INCLUDE=.
-CFLAGS=-Wall -std=c++17
+CFLAGS=-Wall -std=c++20
 CFLAGS+=-O3
 DEBUG=-Dlolainta
 
@@ -40,4 +40,6 @@ new: clean
 	@rm -f *.in
 	cp template.cpp code.cpp
 
+copy: build
+	cat code.cpp | osc52
 
