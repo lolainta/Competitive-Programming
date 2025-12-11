@@ -3,7 +3,7 @@
 
 CC=g++
 INCLUDE=.
-CFLAGS=-Wall -std=c++20
+CFLAGS=-Wall -std=c++23
 CFLAGS+=-O3
 DEBUG=-Dlolainta
 
