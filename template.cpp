@@ -11,6 +11,17 @@
 #define fst first
 #define scd second
 
+#ifdef lolainta
+// Debug macros - only active with -Dlolainta
+#define dbn(x) std::cerr << #x << " = " << x << '\n'
+#define DBN(...) do { std::cerr << "[" << #__VA_ARGS__ << "] = "; _dbn_print(__VA_ARGS__); std::cerr << '\n'; } while(0)
+#define DBN1D(v) std::cerr << #v << " = "; for (auto&& x : v) std::cerr << x << ' '; std::cerr << '\n'
+#define DBN2D(v) std::cerr << #v << " = \n"; for (auto&& r : v) { for (auto&& x : r) std::cerr << x << ' '; std::cerr << '\n'; }
+
+template<typename T> void _dbn_print(T&& x) { std::cerr << x; }
+template<typename T, typename... U> void _dbn_print(T&& x, U&&... u) { std::cerr << x << ", "; _dbn_print(std::forward<U>(u)...); }
+#endif
+
 #ifndef lolainta
 #define DBN(...)
 #define DBN1D(...)
@@ -61,18 +72,18 @@ void solve(){
 }
 
 int main(){
+    ios_base::sync_with_stdio(false);cin.tie(0);
     cout<<fixed<<setprecision(8);
 #ifdef lolainta
     cerr<<"========== Start Executing ==========\n";
-    ios_base::sync_with_stdio(false);cin.tie(0);
 #endif
     pre();
     int _=1;
-//    cin>>_;
+    cin>>_;
     vl __(_);
     iota(all(__),1);
     for(auto i:__){
-		i=i;
+        i=i;
 #ifdef lolainta
         // cout<<"Case "<<i<<": ";
         cerr<<"========== Case "<<i<<" ==========\n";
